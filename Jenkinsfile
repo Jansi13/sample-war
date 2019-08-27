@@ -31,6 +31,7 @@ pipeline {
    {
 		steps {
 		archiveArtifacts 'target/*.war'
+		deploy adapters: [tomcat8(credentialsId: '9152681d-b7af-4d82-8d69-c2dfebec463c', path: '', url: 'http://localhost:8080/')], contextPath: null, war: 'samplewebapp.war'
 			}
 	   }
 
