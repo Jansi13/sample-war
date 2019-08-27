@@ -2,10 +2,12 @@ pipeline {
   
 
   agent { label 'master' }
+  
+  stages {
 
    stage("cloning from the GIT") {
 	steps {
-	echo "clonng from git "
+	echo "cloning from git "
 	}
 
 
@@ -15,7 +17,8 @@ pipeline {
    {
 	steps {
 	echo "build using maven"
-	      }}		
+	      }
+		  		
    }
 
    stage("results")
@@ -25,5 +28,5 @@ pipeline {
 		}
    }
 
-
+}
   } 
